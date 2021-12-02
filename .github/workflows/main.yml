@@ -12,6 +12,11 @@ jobs:
     steps:
       # gitversion/execute step omitted for brevity
 
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+          
       - name: Determine Version
         id: gitversion
         uses: gittools/actions/gitversion/execute@v0.9.7
