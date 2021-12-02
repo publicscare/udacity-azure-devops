@@ -1,4 +1,6 @@
+.ONESHELL:
 SHELL := /bin/bash
+.SHELLFLAGS = -e
 
 VENV_DIR=$(HOME)/.$(shell basename $(CURDIR))
 
@@ -27,9 +29,7 @@ flakeit:
 reformat:
 	black hello.py test_hello.py
 
-
 test:
-#	python -m pytest --vv --cov=mylib --cov=cli --cov=scli tests/*.py
 	python -m pytest test_hello.py
 
 all: install lint test
