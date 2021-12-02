@@ -4,3 +4,4 @@ click
 black
 nbval
 pytest-cov
+flake8

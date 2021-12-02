@@ -19,17 +19,17 @@ install:
 		pip install -r requirements.txt
 
 lint:
-	pylint --disable=R,C mylib cli scli
+	pylint --disable=R,C,E1120,W0613 hello.py
 
 flakeit:
-	flake8 mylib
+	flake8 hello.py
 
 reformat:
-	black cli.py mylib/lib.py
+	black hello.py test_hello.py
 
 
 test:
 #	python -m pytest --vv --cov=mylib --cov=cli --cov=scli tests/*.py
 	python -m pytest test_hello.py
 
-all: install flakeit lint test
+all: install lint test
